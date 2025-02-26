@@ -3,8 +3,13 @@ html {
 }
 body {
     font-size: 1.6rem;
-    font-family: ;
+    font-family: arial;
     line-height: 1.15;
+    font-weight: 400;
+}
+body {
+    background-image: url(../img/bubbles.svg);
+    background-repeat: repeat;
 }
 h1 {font-size: 3.6rem;}
 h2 {font-size: 2.8rem;}
@@ -13,7 +18,9 @@ h4 {font-size: 2rem;}
 h5 {font-size: 1.8rem;}
 h6 {font-size: 1.6rem;}
 
-h1, h2, h3, h4, h5, h6 {font-weight: 600;}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Luckiest Guy", serif;
+    font-weight: 600;}
 
 img {
     width: 100%;
@@ -25,7 +32,7 @@ svg {
     fill: currentColor;
     pointer-events:none
 }
-nav {
+nav, footer {
     background-color: #222;
     color: #eaeaea;
     display: flex;
@@ -40,6 +47,9 @@ nav div {
     align-items: center;
     gap: 2rem;
 }
+.logo h1 {
+    padding-top: 5px;
+}
 .links {
     gap: 4rem;
 }
@@ -47,8 +57,27 @@ nav img {
     height: 60px;
     width: auto;
 }
-
-
+main {
+    max-width: 78vw;
+    margin: auto auto;
+    background: rgba(255, 255, 255, 0.92);
+}
+section {
+    display: grid;
+    margin: 3rem auto;
+    grid-gap: 3rem;
+}
+section.odd {
+    grid-template-columns: 8fr 4fr;
+}
+section.even {
+    grid-template-columns: 4fr 8fr;
+}
+div.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /*-- Media Queries --*/
 
@@ -56,5 +85,11 @@ nav img {
     nav {
         flex-direction: column;
         gap: 2rem;
+    }
+    section.even, section.odd {
+        grid-template-columns: 1fr;
+    }
+    section.even div.poster {
+        order: -1;
     }
  }
